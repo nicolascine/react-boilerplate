@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+//import './App.css';
+
+// router and deps
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
+// components
+import Main from './components/Main';
+import PhotoGrid from './components/PhotoGrid';
+import Single from './components/Single';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+        <div>
+          <Link to="/">Index | </Link>
+          <Link to="/photos">Photos | </Link>
+          <Link to="/single">Single</Link>
+          <Switch>
+            <Route exact path="/" component={Main} />
+            <Route path="/photos" component={PhotoGrid} />
+            <Route path="/single" component={Single} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
