@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
+import PhotoGrid from './PhotoGrid';
+import ShoppingCart from './ShoppingCart';
+
 class Main extends Component {
   render() {
     return (
       <div>
-        <h1>Main...</h1>
+        <PhotoGrid />
+        <ShoppingCart />
       </div>
     );
   }
