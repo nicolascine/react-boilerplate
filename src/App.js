@@ -21,7 +21,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/photos" component={PhotoGrid} />
-            <Route path="/single" component={Single} />
+            <Route path="/view/:postId" component={Single} />
           </Switch>
         </div>
       </BrowserRouter>
